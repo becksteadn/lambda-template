@@ -6,7 +6,7 @@ resource "aws_lambda_function" "my-function" {
     function_name = "my-function"
     filename = "function/build/build.zip"
     source_code_hash = "${filebase64sha256("function/build/build.zip")}"
-    role = "${aws_iam_role.r-netsec.arn}"
+    role = "${aws_iam_role.my-function.arn}"
     handler = "main.handler"
     runtime = "python3.7"
     timeout = "15"
